@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 子选择器 */
+        /* div > span {
+            color: rgb(12, 143, 12);
+        } */
+
+
+        /* 后代选择器 */
+        /* div span {
+            color: orange;
+        } */
+
+
+        /* 兄弟选择器 */
+        p + span {
+            color: red;
+        }
+        p ~ span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        我是一个div
+        <p>
+            我是一个p元素，在div里面
+            <span>我是p元素里面的span</span>
+        </p>
+        <div></div>
+        <span>我是div的span</span>
+        <span>我是div的span</span>
+        <span>我是div的span</span>
+        <span>我是div的span</span>
+    </div>
+
+    <span>
+        我是div外的span
+    </span>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      img {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="demo">
+      <img
+        data-src="https://cdn.pixabay.com/photo/2021/08/24/15/38/sand-6570980_960_720.jpg"
+        alt="1"
+      />
+      <img
+        data-src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg"
+        alt="2"
+      />
+      <img
+        data-src="https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg"
+        alt="3"
+      />
+      <img
+        data-src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+        alt="4"
+      />
+      <img
+        data-src="https://cdn.pixabay.com/photo/2017/03/26/21/54/yoga-2176668_960_720.jpg"
+        alt="5"
+      />
+    </div>
+  </body>
+  <script>
+    // 获取所有的img元素
+    const demo = document.querySelectorAll("img");
+    // 懒加载——回调函数
+    function lazy() {
+      for (let elem of demo) {
+        if (
+            // 如果这个元素的top小于当前窗口的高度（说明该元素已经到达视口可见区）
+          elem.getBoundingClientRect().top <
+          document.documentElement.clientHeight
+        ) {
+            // 判断dataset.src以及elem.src的存在的情况，并且进行赋值
+          if (elem.dataset.src && elem.src == "") {
+            elem.src = elem.dataset.src;
+          }
+        }
+      }
+    }
+    // 节流函数
+    function throttle(t, fn) {
+      let time;
+      return function () {
+        if (!time) {
+          time = setTimeout(() => {
+            time = null;
+            fn();
+          }, t);
+          console.log(time);
+        }
+      };
+    }
+    // 初始化的时候执行一下懒加载函数
+    lazy();
+    // 全局监听scroll的滚动事件
+    window.addEventListener("scroll", throttle(500, lazy));
+  </script>
+</html>

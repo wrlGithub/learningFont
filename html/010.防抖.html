@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <title></title>
+    </head>
+    <body>
+        <button id="btn">test</button>
+    </body>
+    <script type="text/javascript">
+/**
+ * 防抖函数  一个需要频繁触发的函数，在规定时间内，只让最后一次生效，前面的不生效
+ * @param fn要被节流的函数
+ * @param delay规定的时间
+ */
+ function debounce(fn, delay) {
+    //记录上一次的延时器
+    var timer = null;
+    return function () {
+       //清除上一次的演示器
+        clearTimeout(timer);
+        //重新设置新的延时器
+        timer = setTimeout(()=>{
+            //修正this指向问题
+            fn.apply(this);
+        }, delay); 
+    }
+}
+document.getElementById('btn').onclick = debounce(function () {
+    console.log('按钮被点击了' + Date.now());
+}, 1000);
+    </script>
+</html>

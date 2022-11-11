@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己实现的图片懒加载</title>
+    <style>
+        img{
+            width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://img2.baidu.com/it/u=645336210,1332246460&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=1082" alt="1">
+    <img src="https://img0.baidu.com/it/u=829563109,2593916523&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889" alt="2">
+    <img src="https://img2.baidu.com/it/u=404923299,3171300841&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=781" alt="3">
+    <img src="https://img2.baidu.com/it/u=404923299,3171300841&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=781" alt="4">
+</body>
+<script>
+    // 实现一个节流函数
+    function throttle( delay , fn ) {
+        let time;
+        return function() {
+            if(!time) {
+                time = setTimeout(() => {
+                    time = null;
+                    fn();
+                }, delay)
+                console.log(time);
+            } 
+        }
+    }
+    // 获取所有的img
+    const demo = document.querySelectorAll("img");
+    // 懒加载函数
+    function lazy() {
+        for(let e of demo) {
+            if(e.getBoundingClientRect().top < document.documentElement.clientHeight){
+                if(e.dataset.src && e.src == "") {
+                    e.src = e.dataset.src;
+                }
+            }
+        }
+    }
+    lazy();
+    window.addEventListener("scroll",throttle(500, lazy))
+</script>
+</html>

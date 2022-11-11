@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript"> 
+            function showMessage(){ 
+            alert("Hello world!"); 
+            } 
+           </script> 
+           <!-- <input type="button" value="Click Me" onclick="showMessage()" /> -->
+
+           <!-- 输出 "click" --> 
+           <!-- 这样指定事件处理程序具有一些独到之处。首先，这样会创建一个封装着元素属性值的函数。这个
+函数中有一个局部变量 event，也就是事件对象 -->
+            <input type="button" value="Click Me" onclick="alert(event.type)">
+            <input type="button" value="Click Me for event" onclick="console.log(event)">
+            <input type="button" value="Click Me for event this.value" onclick="alert(this.value)">
+    </body>
+    <script type="text/javascript">
+        
+    </script>
+</html>

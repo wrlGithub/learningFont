@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式</title>
+</head>
+<body>
+    <ul>
+        <li>首页</li>
+        <li>详细</li>
+        <li>产品</li>
+        <li>课程</li>
+        <li>订单</li>
+        <li>关于</li>
+        <li>招聘</li>
+    </ul>
+    <picture>
+        <!-- source标签作用：为媒介元素定义媒介资源，允许规定浏览器根据他对媒体类型或解编码器进行选择 -->
+        <source srcset="./source/1.jpg" media="(min-width:1000px)">
+        <source srcset="./source/2.jpg" media="(min-width:600px)">
+        <img srcset="./source/3.jpg">
+    </picture>
+</body>
+<style>
+    ul{
+        list-style: none;
+    }
+    ul li{
+        display: inline-block;
+        width: 60px;
+        background-color:rgb(191, 197, 193);
+    }
+    /* 当屏幕像素大于700px小于1000px的时候，最后一个列表元素不显示 */
+    @media only screen and (max-width:1000px) {
+        ul li:last-child{
+            display: none;
+        }
+    }
+    /* 当屏幕像素小于700px的时候，列表的第三个元素不显示 */
+    @media only screen and (max-width:700px) {
+        ul li:nth-child(3){
+            display: none;
+        }
+    }
+</style>
+</html>

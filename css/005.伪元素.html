@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<style>
+    /* 第一个字母 */
+    div::first-letter {
+        font-size: 30px;
+        color: red;
+    }
+    /* 第一行 */
+    p::first-line {
+        color: blue;
+        font-size: 20px;
+    }
+    p::before {
+        color: yellowgreen;
+        font-size: 30px;
+        content: "の";
+    }
+    p::after {
+        color: coral;
+        font-size: 30px;
+        content: "lo";
+    }
+</style>
+<body>
+    <div>Hello Hello How are you?</div>
+    <p>
+        Wasn't it a pleasure to learn and practice often?<br>
+        Widely familiar with classics, review the knowledge learned, and then get new insights from it, so that the degree can be call
+        a teacher。
+    </p>
+</body>
+</html>

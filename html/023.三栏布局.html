@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三栏布局</title>
+</head>
+<body>
+    <div class="left">左</div>
+    <div class="right">右</div>
+    <div class="middle">中</div>
+</body>
+<!-- 1. flex布局 -->
+<style>
+    /* html, body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .left, .right{
+        width: 200px;
+        height: 100%;
+        background-color: rgb(208, 142, 20);
+    }
+    .middle{
+        height: 100%;
+        background-color: pink;
+        flex: 1;
+        min-width: 200px;
+    } */
+</style>
+<!-- 2. 定位 -->
+<style>
+    /* html, body {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .left, .right{
+        width: 200px;
+        height: 100%;
+        background-color: rgb(208, 142, 20);
+        position: absolute;
+    }
+    .left {
+        left: 0%;
+        top: 0%;
+    }
+    .right {
+        right: 0%;
+        top: 0;
+    }
+    .middle{
+        height: 100%;
+        background-color: pink;
+        min-width: 200px;
+        margin: 0 200px;
+    } */
+</style>
+<!-- 3. float布局 -->
+<style>
+    /* html, body {
+        width: 100%;
+        height: 100%;
+    }
+    .left, .right{
+        width: 200px;
+        height: 100%;
+        background-color: rgb(208, 142, 20);
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .middle{
+        height: 100%;
+        background-color: pink;
+        min-width: 200px;
+        margin: 0 200px;
+    } */
+</style>
+<!-- 4. BFC布局 -->
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    .left, .right{
+        width: 200px;
+        height: 100%;
+        background-color: rgb(208, 142, 20);
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+    .middle{
+        height: 100%;
+        background-color: pink;
+        /* min-width: 200px; */
+        overflow: hidden;
+        /* float: left; */
+    }
+</style>
+</html>

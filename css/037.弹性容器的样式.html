@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>037</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 200px;
+            border: 5px red solid;
+            display: flex;
+            /* 自动换行 */
+            /* flex-wrap: wrap; */
+            /* wrap-reverse 元素沿着辅轴反方向换行 */
+            /* flex-wrap: wrap-reverse; */
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .box1 div{
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+        }
+        .box1 div:nth-child(2){
+            background-color: pink;
+        }
+        .box1 div:nth-child(3){
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">1
+            <div class="box3">2</div>
+            <div class="box3">2</div>
+            <div class="box3">2</div>
+        </div>
+        
+        <div class="box3">2</div>
+        <div class="box4">3</div>
+    </div>
+</body>
+</html>

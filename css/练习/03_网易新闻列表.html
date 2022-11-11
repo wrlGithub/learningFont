@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻列表</title>
+    <link rel="stylesheet" href="../reset.css">
+</head>
+<style>
+    body{
+        /* background-color: #bfa; */
+    }
+    .news-wrapper{
+        background-color: #fff;
+        margin: 50px auto;
+        width: 300px;
+        height: 358px;
+        border-top: 1px #ddd solid;
+    }
+    .news-title {
+        height: 30px;
+        display: inline-block;
+        border-top: 1px solid salmon;
+        margin-top: -1px;
+        padding-top: 10px;
+    }
+    .news-title a{
+        text-decoration: none;
+        color: #40406b;
+    }
+    .news-list li{
+        margin-top: 14px;
+        font-size: 14px;
+    }
+    .news-list li::before{
+        content: '■';
+        color: #333;
+        font-size: 14px;
+        margin-right: 4px;
+    }
+    .news-list li a{
+        text-decoration: none;
+        color: #333;
+        padding-left: 10px;
+    }
+    .news-list li a:hover{
+        color: red;
+    }
+    .news-img a h3{
+        margin-top: -25px;
+        font-size: 16px;
+        color: white;
+        font-weight: bolder;
+        padding-left: 10px;
+
+    }
+</style>
+<body>
+    <div class="news-wrapper">
+        <h2 class="news-title">
+            <a href="#">体育</a>
+        </h2>
+
+
+    <div class="news-img">
+        <a href="#">
+            <img src="../img/网易体育.webp" alt="英超">
+            <h3>英超恐怖断腿重伤 他却在担架上微笑</h3>
+        </a>
+    </div>
+
+    <ul class="news-list">
+        <li>
+            <a href="#">
+                东契奇完美替身打爆爵士，年薪只要180万
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                止步半决赛，“上海尼克斯”脱胎换骨了
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                0-13击碎地产足球遮羞布许老板足球梦碎
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                踢球&做自媒体哪个更难?女足高圆圆的爆红
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

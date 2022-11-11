@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input"></input>
+    <script>
+        function myinput(event) {
+            console.log('触发了input');
+            request(event.target.value);
+        }
+        // 模拟请求
+        function request(value) {
+            console.log('请求了',value);
+        }
+        function debounce( fn , delay ) {
+            let  timeout = null;
+            return function(...args) {
+                if(timeout) {
+                    clearTimeout(timeout)
+                    timeout = null
+                }else{ // 第一次输入立即执行
+
+                }
+                timeout = setTimeout(() =>{
+                    fn.apply(this,args)
+                }, delay)
+            }
+        }
+        let input = debounce(myinput,400)
+        document.getElementById('input').oninput = input
+
+
+    </script>
+</body>
+<style>
+    input {
+        border: 2px  rgb(62, 47, 47) solid;
+    }
+</style>
+</html>

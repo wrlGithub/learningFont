@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建造者模式</title>
+</head>
+<body>
+    <script>
+        // 建造者模式关心的是过程，工厂模式关心的是结果
+        // 工厂模式主要是为了创建对象实例或者类簇，关心的是产出
+        // 建造者模式关心的是创建这个对象的整个过程
+
+        class Navbar {
+            init(){
+                console.log('init - navbar');
+            }
+
+            getData() {
+                return  new Promise( (resolve) => {
+                    console.log('正在申请数据');
+                    setTimeout( () => {
+                        resolve('over')
+                    }, 1000)      
+                })
+            }
+
+            render() {
+                console.log('render - navbar')
+            }
+        }
+
+        class List {
+            init(){
+                console.log('init - list');
+            }
+
+            getData() {
+                console.log('getdata - list');
+            }
+
+            render() {
+                console.log('render - list')
+            }
+        }
+
+        class Creater{
+            async startBuild(builder) {
+                await builder.init()
+                let res = await builder.getData()
+                console.log(res);
+                await builder.render()
+            }
+        }
+        // new一个实例
+        let nav = new Navbar()
+        // 执行建造的过程: 新建一个建造者，用建造者执行新建实例
+        let creater= new Creater()
+        creater.startBuild(nav)
+    </script>
+</body>
+</html>
